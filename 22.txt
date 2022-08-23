@@ -3,3 +3,7 @@ ho
 ho
 hi
 hi
+yes
+no
+tnx
+pl
