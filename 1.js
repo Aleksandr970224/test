@@ -60,3 +60,100 @@ if (numberResult < 5) {
   numberResult = 1;
 };
 console.log(numberResult);
+
+
+
+/* Задание 13.8 Попросить пользователя ввести одно число, следом - второе число. Вывести в консоль максимальное из чисел (наибольшее) с текстом: Большее число: 7 (вместо 7 будет максимальное число из введенных пользователем).
+* предусмотреть вариант ввода одинаковых чисел*/
+
+let userNumber1 = +prompt();
+let userNumber2 = +prompt();
+
+let userNumberMax = "Большее число: ";
+if (userNumber1 >= userNumber2) {
+  userNumberMax += userNumber1;
+} else {
+  userNumberMax += userNumber2;
+} if (userNumber1 === userNumber2) {
+  console.log('Числа не могут быть равны!');
+};
+
+if (userNumber1 !== userNumber2) {
+  console.log(userNumberMax);
+};
+
+
+
+/* Задание 13.9 Определить, является ли введенное пользователем число num1 кратным введенному числу num2. Обе переменные запрашиваем у пользователя, ответ выводим в консоль.*/
+
+let num1 = +prompt();
+let num2 = +prompt();
+
+if (num1 % num2 === 0) {
+  console.log('yes');
+} else {
+  console.log('no');
+};
+
+
+/*Задание 13.10 Запросить у пользователя средний балл, записать в переменную.
+Если средний балл 1-4 - вывести в консоль "Двоечник, иди учись!", если 5-8 - "Неплохо, но давай еще поднажмем!", если 9-10 - "Ого, да ты настоящий отличник!" (можно другие фразы - по желанию).*/
+
+let middleBall = prompt();
+
+if ( middleBall <= 4) {
+  console.log("Двоечник, иди учись!");
+} if (middleBall >= 5 & middleBall <= 8) {
+  console.log("Неплохо, но давай еще поднажмем!");
+} if (middleBall >= 9) {
+  console.log("Ого, да ты настоящий отличник!");
+};
+
+
+
+
+/*Задание 13.11 Запросить у пользователя ответы на 2 вопроса:
+- балл за экзамен (от 0 до 100)
+- количество выполненных проектов (от 0 и больше)
+Вывести в консоль общий выпускной балл в соответствии с этими значениями:
+- 100, если балл за экзамен более 90 или количество проектов более 10.
+- 90, если балл за экзамен более 75 и количество проектов не менее 5.
+- 75, если балл за экзамен более 50 и количество проектов не менее 2.
+- 0 во всех других случаях.*/
+
+let scoreForExam = +prompt();
+let numberOfCompletedProject = +prompt();
+
+if (scoreForExam > 90 || numberOfCompletedProject > 10) {
+  console.log(100);
+};
+if (scoreForExam > 75 && scoreForExam <= 90 && numberOfCompletedProject >= 5 && numberOfCompletedProject <= 10) {
+  console.log(90);
+};
+if (scoreForExam > 50 && scoreForExam <= 75 && numberOfCompletedProject >= 2 && numberOfCompletedProject < 5) {
+  console.log(75);
+;}
+if (scoreForExam <= 50 && numberOfCompletedProject < 2) {
+  console.log(0);
+};
+//Что значит: "Во всех других случаях"?
+// if (scoreForExam <= 100 && numberOfCompletedProject < 10) {
+//   console.log(0);
+// }
+// else { console.log(0);}
+
+
+
+/*Задание 13.12 День аренды автомобиля стоит $40. При аренде на 7 или больше дней вы получаете общую итоговую скидку $50. Если вы арендуете авто на 3 или более дней, ваша общая скидка составит $20.
+
+Количество дней, на которые нужно арендовать авто, запрашиваются с помощью prompt. Напишите программу, рассчитывающую общую стоимость аренды на запрашиваемое количество дней.*/
+
+let carRentPerDay = 40;
+let DayRent = +prompt();
+
+if (DayRent >= 7) {
+  console.log(DayRent * 40 - 50);
+};
+if (DayRent >= 3 && DayRent < 7) {
+  console.log(DayRent * 40 - 20);
+};
