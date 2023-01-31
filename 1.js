@@ -126,21 +126,10 @@ let numberOfCompletedProject = +prompt();
 
 if (scoreForExam > 90 || numberOfCompletedProject > 10) {
   console.log(100);
-};
-if (scoreForExam > 75 && scoreForExam <= 90 && numberOfCompletedProject >= 5 && numberOfCompletedProject <= 10) {
+} else if (scoreForExam > 75 && scoreForExam <= 90 && numberOfCompletedProject >= 5 && numberOfCompletedProject <= 10) {
   console.log(90);
-};
-if (scoreForExam > 50 && scoreForExam <= 75 && numberOfCompletedProject >= 2 && numberOfCompletedProject < 5) {
-  console.log(75);
-;}
-if (scoreForExam <= 50 && numberOfCompletedProject < 2) {
-  console.log(0);
-};
-//Что значит: "Во всех других случаях"?
-// if (scoreForExam <= 100 && numberOfCompletedProject < 10) {
-//   console.log(0);
-// }
-// else { console.log(0);}
+} else if (scoreForExam > 50 && scoreForExam <= 75 && numberOfCompletedProject >= 2 && numberOfCompletedProject < 5) {
+  console.log(75);} else { console.log(0);}
 
 
 
