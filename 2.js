@@ -173,3 +173,13 @@ function getNumberInteger(n) {
 };
 
 getNumberInteger(5);
+
+
+// function getNumberInteger(n) {
+//   for (i = 1; i < n; i = i + 0.5) {
+//     let result = (i % 1 === 0) ? ' integer' : ' decimal';
+//     console.log(i + result);
+//   }
+// };
+
+// getNumberInteger(5);
