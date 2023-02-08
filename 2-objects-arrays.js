@@ -176,6 +176,7 @@ let numbers = [42, 65, 49, 68, 56, 47, 70, 42, 51, 35, 58, 63, 40, 70];
 // console.log(maxNum);
 
 
+//4)
 let maxInd = 70;
 
 for (let i = 0; i < numbers.length; i++) {
@@ -183,6 +184,27 @@ for (let i = 0; i < numbers.length; i++) {
     console.log(i);
   }
 };
+
+
+
+// 4) Переделал
+let maxNum = numbers[0];
+let maxInd = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  if(maxNum <= numbers[i]) {
+    maxNum = numbers[i];
+  };
+};
+
+for (let i = 0; i < numbers.length; i++) {
+  if (maxNum === numbers[i]) {
+    maxInd.push(i);
+  };
+};
+
+console.log(maxInd);
+console.log(maxNum);
 
 
 
