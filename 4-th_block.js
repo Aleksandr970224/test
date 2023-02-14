@@ -17,17 +17,23 @@ sum(1); // введите два параметра
 sum(); // введите два параметра */
 
 
-let fff;
-
 function sumNumbers (num1, num2) {
-  if(typeof num1 === typeof 6 && typeof num2 === typeof 6) {
+  if(typeof num1 === typeof Number() && typeof num2 === typeof Number()) {
   console.log(num1 + num2);} 
-  else if ((typeof num1 === typeof fff  && typeof num2 === typeof fff) || (typeof num1 === typeof fff  || typeof num2 === typeof fff)) {
+  else if (typeof num1 === typeof undefined  && typeof num2 === typeof undefined) {
     console.log('введите два параметра');
+  } else if(typeof num1 === typeof undefined  || typeof num2 === typeof undefined) {
+console.log('введите два параметра');
   } else { console.log(`введенные данные не являются числами`);}
 };
 
 sumNumbers(3, 5);
+sumNumbers(3);
+sumNumbers();
+sumNumbers('hi');
+sumNumbers('hi', 'ho');
+sumNumbers('hi', 3);
+sumNumbers(3, 'hi');
 
 
 
@@ -47,12 +53,10 @@ square()
 // ДО: NaN
 // ПОСЛЕ: Uncaught Error: Функция "square" не может быть вызвана без аргумента*/
 
-let aaa;
-
 function square(a) {
-  if (typeof a === typeof 6) {
+  if (typeof a === typeof Number()) {
   console.log(a * a);
-  } else if (typeof a === typeof aaa) {
+  } else if (typeof a === typeof undefined) {
     console.log('Uncaught Error: Функция "square" не может быть вызвана без аргумента');
   };
 };
@@ -160,7 +164,7 @@ const objectWithNumbers = {
 let sumObjectValues = (obj) => {
   let result = 0;
   for (let key in obj) {
-    if(typeof obj[key] === typeof 6){
+    if(typeof obj[key] === typeof Number()){
       result = result + obj[key];
     };
   };
