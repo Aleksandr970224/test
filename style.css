@@ -1,0 +1,62 @@
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+}
+
+div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red;
+  display: inline-block;
+}/*# sourceMappingURL=style_2.css.map */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  background-color: #c4c7cf;
+  margin: 50px 200px;
+  padding: 50px 0;
+  min-height: 180px;
+  max-width: 300px;
+}
+
+.contentTriagle {
+  min-width: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+.contentTriagle #triangle {
+  background-color: #008000;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.contentTriagle #triangle::before {
+  content: "";
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: -11px;
+  width: 25px;
+  height: 20px;
+  background-color: #c4c7cf;
+  transform: rotate(45deg);
+}
+
+ul {
+  list-style: none;
+}
+ul li {
+  display: none;
+}/*# sourceMappingURL=style_9.css.map */
