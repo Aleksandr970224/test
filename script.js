@@ -1,143 +1,76 @@
-/*1. Повторите поведение страницы по данному образцу. Координаты должны меняться и зависеть от положения курсора мыши на в области
-X:295 Y:3
-*/
+/* Задание 1
 
+Задать массив имен. Создать 2 переменные, которые будут хранить первых 2 имени, вывести их в консоль. Создать массив, который будет хранить остальные имена, вывести имена из него по одному в консоль. Если кол-во элементов остаточного массива меньше 2, то вторая переменная должна стать равна "alex".*/
 
-let pAxis = document.querySelector('.axic');
+//1)
+const nameArr = ['bob', 'tom', 'kate', 'john'];
 
-// pAxis.addEventListener('mousemove', (event) => {
-//   pAxis.innerText = `X: ${event.x} Y: ${event.y}`;
-//   console.log(event);
-// });
+let [firstName, secondName] = nameArr;
+console.log(firstName, secondName);
 
-pAxis.onmousemove = (event) => pAxis.innerText = `X: ${event.x} Y: ${event.y}`;
+//2)
+let [ , ,...restName] = nameArr;
+console.log(restName);
+restName.forEach(el => console.log(el));
 
-
-
-/* 2. Повторите поведение страницы по данному образцу. При нажатии на область, красный квадрат его верхний левый угол доложен поместиться в ту координату, на которую вы нажали*/
-
-let div = document.querySelector('div');
-
-document.querySelector('body').addEventListener('click', (event) => {
-  div.style.position = 'absolute';
-  div.style.top = `${event.y}px`;
-  div.style.left = `${event.x}px`;
-  div.style.transition = '.2s'
-  // console.log(event.x);
-});
+//3)
+if (restName.length < 3) {
+  secondName = 'alex';
+};
+console.log(secondName);
 
 
 
 
-/* 2. Повторите поведение страницы по данному образцу. При нажатии на область, красный квадрат его верхний левый угол доложен поместиться в ту координату, на которую вы нажали*/
 
-let div = document.querySelector('div');
+/* Задание 2
 
-document.querySelector('body').addEventListener('click', (event) => {
-  div.style.position = 'absolute';
-  div.style.top = `${event.y}px`;
-  div.style.left = `${event.x}px`;
-  div.style.transition = '.2s'
-  // console.log(event.x);
-});
+Задать массив имен. Задать функцию, которая принимает 3 параметра и выводит их в консоль. Передать массив в функцию. Внутри функции каждый параметр должен быть равен одному из элементов массива. */
 
 
+const nameArr = ['max', 'sveta', 'boris', 'eva'];
 
-/* 4. Создайте инпут который будет выводить код последнего элемента введенного в инпут  */
-
-
-let input = document.querySelector('input');
-
-let p = document.querySelector('p');
-
-let text = 'Код нажатой клавиши: '
-
-input.onkeydown = (event) => p.innerText = `${text}${event.keyCode}`;
-
-
-
-/* 5. Создайте инпут который будет выводить последний элемент введенный в инпут */
-
-let input = document.querySelector('input');
-
-let p = document.querySelector('p');
-
-let text = 'Нажатая клавиша: ';
-
-input.onkeydown = (event) => p.innerText = text + event.key;
-
-
-
-/* 6. Дан элемент. Сделайте так, чтобы по клику на него он красился в красный цвет, но только если в момент клика нажата клавиша Ctrl.
-(event.keyCode === 17) */
-
-
-let div = document.querySelector('div');
-
-// document.addEventListener('keydown', (event) => {
-//   if (event.keyCode === 17) {
-//     div.addEventListener('click', () => {
-//       div.style.backgroundColor = 'red';
-//     });
-//   }
-// });
-
-document.onkeydown = (event) => {
-  if (event.keyCode === 17) {
-    div.onclick = () => div.style.backgroundColor = 'red';
-  };
+function getElem(elFirst, elSecond, arr) {
+  [elFirst, elSecond] = arr;
+  console.log(elFirst, elSecond);
 };
 
+getElem([], [],  nameArr);
 
 
+//2) Второй вариант??
 
-/* 7. Дан элемент. Сделайте так, чтобы при клике на него и нажатой клавише Ctrl - в его текст записывалось '1', при нажатой клавише Alt - '2', а при нажатой клавише Shift - '3'. */
+// function getElem(elFirst, elSecond, elThird) {
+//   [elFirst, elSecond, elThird] = nameArr;
+//   console.log(elFirst, elSecond, elThird);
+// };
 
-let div = document.getElementById('colorContainer');
-
-div.innerText = 'hi';
-
-div.style.display = 'flex';
-div.style.alignItems = 'center';
-div.style.justifyContent = 'center';
-div.style.fontSize = '24px';
-
-document.onkeydown = (event) => {
-  if (event.keyCode === 17) {
-    div.onclick = () => div.innerText = 1;
-  } else if (event.keyCode === 18) {
-    div.onclick = () => div.innerText = 2;
-  }  else if (event.keyCode === 16) {
-    div.onclick = () => div.innerText = 3;
-  }
-}
-
-// document.onkeydown = (event) => console.log(event.keyCode);
+// getElem();
 //
 //
 //
-// /* 8. Создайте кнопку и элемент. При нажатии на кнопку, будет скрываться элемент */
+//
+//
+//
+// /* Задание 3
 
-let hidingButton = document.querySelector('input');
+Задать объект с N полей. Создать 2 переменные, которые будут называться так же, как поля, и хранить 2 значения полей объекта. Если соответствующих полей в объекте нет, задать значения чисел 1 и 2. Все остальные поля объекта записать в переменную fields.*/
 
-let hiddenElem = document.querySelector('div');
+//1)
+const obj = {
+  // name: 'tim',
+  // age: 26,
+  country: 'Jamaica',
+  gender: 'man',
+};
+console.log(obj);
 
-hidingButton.addEventListener('click', () => hiddenElem.style.display = 'none');
+let {name, age} = obj;
+console.log(name, age);
 
 
-
-
-/* 9. Создайте раскрывающееся меню */
-
-let divTriangle = document.getElementById('triangle');
-
-let li = document.body.children[0].children[1].children;
-
-// console.log(li);
-
-divTriangle.addEventListener('click', () => {
-  divTriangle.style.transform = 'rotate(136deg)';
-  for (let key of li) {
-    key.style.display = 'block'
-  };
-});
+//2)
+if (obj.name === undefined && obj.age === undefined) {
+  let {name = 1, age = 2, ...fields} = obj;
+  console.log(name, age, fields);
+};
